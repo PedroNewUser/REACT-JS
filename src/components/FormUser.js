@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './FormUser.css'
 
- function FormUser() {
+function FormUser() {
     const [name, setNome] = useState('')
     const [email, setEmail] = useState('')
     const [senha, setPassword] = useState('')
