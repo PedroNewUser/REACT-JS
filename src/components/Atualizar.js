@@ -2,29 +2,21 @@ import { useState } from 'react'
 import './FormUser.css'
 import { useParams } from 'react-router-dom'
 
-function Onclick(){          
-        window.location.href = "http://localhost:3000/atualizar?id="+id
-        const {id} = useParams()
-    }
+// function Onclick(){          
+//         window.location.href = "http://localhost:3000/atualizar?id="+id
+//     }
 
 
 function FormUser() {
-    const [name, setNome] = useState('')
-    const [email, setEmail] = useState('')
-    const [senha, setPassword] = useState('')
-    const [cpf_cnpj, setCpf_cnpj] = useState('')
+    const {id} = useParams();
+    const [name, setNome] = useState('');
+    const [email, setEmail] = useState('');
+    const [senha, setPassword] = useState('');
+    const [cpf_cnpj, setCpf_cnpj] = useState('');
 
 
     async function CadastroUser() {
-        if(name === "" || email === "" || senha === "" || cpf_cnpj==="") {
-            alert("Preencha todos os campos!")
-            return
-        } 
-        
-
-
-        // Integrar com a vossa API
-        let api = await fetch("http://localhost:8081/user/update/${id}", {
+        let api = await fetch(`http://localhost:8081/user/update/${id}`, {
             method : "PUT",
             body:JSON.stringify({
                 "name":name,
@@ -71,7 +63,7 @@ function FormUser() {
                     <label htmlFor='cpf_cnpf'>CPF/CNPJ:</label>
                     <input className='campo' type='text' id='cpf_cnpf' name='cpf_cnpf' placeholder='Digite seu CPF/CNPJ' onChange={(e)=> setCpf_cnpj(e.target.value)}></input>
 
-                    <input className='botao' type='button' value="Cadastrar" onClick={Onclick}/>
+                    <input className='botao' type='button' value="Cadastrar" onClick={CadastroUser}/>
                 </form>
             </div>
         </div>
