@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './FormUser.css'
+import './Atualizar.css'
 
 function Onclick(){          
         window.location.href = "http://localhost:3000/atualizar?id="+id
