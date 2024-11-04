@@ -6,7 +6,6 @@ import { useParams } from 'react-router-dom'
 //         window.location.href = "http://localhost:3000/atualizar?id="+id
 //     }
 
-
 function FormUser() {
     const {id} = useParams();
     const [name, setNome] = useState('');

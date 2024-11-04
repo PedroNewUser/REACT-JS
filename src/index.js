@@ -16,7 +16,7 @@ root.render(
         <Route path='/' element={<App/>}></Route>
         <Route path='/save' element={<CadastroUser/>}></Route>
         <Route path='/listar-user' element={<ListarUsuario/>}></Route>
-        <Route path='/atualizar' element={<Atualizar/>}></Route>
+        <Route path='/atualizar/:id' element={<Atualizar/>}></Route>
 
       </Routes>
     </BrowserRouter>
