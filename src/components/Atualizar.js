@@ -1,25 +1,25 @@
-import { useState } from 'react';
-import { userParams } from 'react-router-dom';
-import './Atualizar.css';
+import { useState } from 'react'
+import { useParams } from 'react-router-dom';
+import './FormUser.css'
 
-// function Onclick(){          
-//         window.location.href = "http://localhost:3000/atualizar?id="+id
-//     }
-
-
-function AtualizarUser() {
-    const {id} = userParams();
-    const [name, setNome] = useState('');
-    const [email, setEmail] = useState('');
-    const [senha, setPassword] = useState('');
+function Atualizar() {
+    const { id } = useParams();
+    const [name, setNome] = useState('')
+    const [email, setEmail] = useState('')
+    const [senha, setPassword] = useState('')
     const [cpf_cnpj, setCpf_cnpj] = useState('')
 
-    
-    async function EditarUser() {
-        let api = await fetch(`http://localhost:8081/user/atualizar/${id}`, {
+
+    async function AtualizarUser() {
+        if(name === "" || email === "" || senha === "" || cpf_cnpj==="") {
+            alert("Preencha todos os campos!")
+            return
+        } 
+
+        // Integrar com a vossa API
+        let api = await fetch("http://localhost:8081/user/"+id, {
             method : "PUT",
             body:JSON.stringify({
-                "id":id,
                 "name":name,
                 "email":email,
                 "password":senha,
@@ -32,7 +32,7 @@ function AtualizarUser() {
         })
 
         if(api.ok){
-            alert("atualização com sucesso !")
+            alert("Cadastro com sucesso !")
             window.location.href = "http://localhost:3000/listar-user"
             return;
         }
@@ -64,12 +64,12 @@ function AtualizarUser() {
                     <label htmlFor='cpf_cnpf'>CPF/CNPJ:</label>
                     <input className='campo' type='text' id='cpf_cnpf' name='cpf_cnpf' placeholder='Digite seu CPF/CNPJ' onChange={(e)=> setCpf_cnpj(e.target.value)}></input>
 
-                    <input className='botao' type='button' value="Cadastrar" onClick={EditarUser}/>
+                    <input className='botao' type='button' value="Cadastrar" onClick={AtualizarUser}/>
                 </form>
             </div>
         </div>
     )
 }
 
-export default AtualizarUser
+export default Atualizar
 
