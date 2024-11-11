@@ -1,8 +1,8 @@
 import './ListarUsuario.css'
 import { useEffect, useState } from 'react'
 
-// function onclick(id){            
-//     window.location.href = "http://localhost:3000/?id="+id}
+function onclick(id){            
+    window.location.href = "http://localhost:3000/atualizar?id="+id}
 
 function ListarUsuario(){     
     const [users, setUsers] = useState([]);

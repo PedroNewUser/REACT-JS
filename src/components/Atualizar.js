@@ -1,13 +1,19 @@
 import { useState } from 'react'
 import { useParams } from 'react-router-dom';
 import './FormUser.css'
+import { useParams } from 'react-router-dom'
 
-function Atualizar() {
-    const { id } = useParams();
-    const [name, setNome] = useState('')
-    const [email, setEmail] = useState('')
-    const [senha, setPassword] = useState('')
-    const [cpf_cnpj, setCpf_cnpj] = useState('')
+// function Onclick(){          
+//         window.location.href = "http://localhost:3000/atualizar?id="+id
+//     }
+
+
+function FormUser() {
+    const {id} = useParams();
+    const [name, setNome] = useState('');
+    const [email, setEmail] = useState('');
+    const [senha, setPassword] = useState('');
+    const [cpf_cnpj, setCpf_cnpj] = useState('');
 
 
     async function AtualizarUser() {
