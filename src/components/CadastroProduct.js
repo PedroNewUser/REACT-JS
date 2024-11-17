@@ -5,9 +5,7 @@ function FormProduct() {
     const [name, setNome] = useState('')
     const [preco, setPreco] = useState('')
     const [quantidade, setQuantidade] = useState('')
-    const [user, setUser] = useState('')
-
-
+    // const [user, setUser] = useState('')
 
     async function cadastroProduct() {
         if(name === "" || preco === "" || quantidade === "") {
@@ -21,8 +19,8 @@ function FormProduct() {
             body:JSON.stringify({
                 "name":name,
                 "preco":preco,
-                "quantidade":quantidade,
-                "user":user
+                "quantidade":quantidade
+                // "user":user
             }),
             headers:{
                 'Content-Type':'application/json'
@@ -37,8 +35,6 @@ function FormProduct() {
         else {
             alert("Erro ao cadastrar usuário");
         }
-
-
         alert(name)
         alert(preco)
     }
@@ -59,8 +55,8 @@ function FormProduct() {
                     <label htmlFor='quantidade'>Quantidade:</label>
                     <input className='campo' type='number' id='quantidade' name='quantidade' placeholder='Digite a quantidade do produto'  onChange={(e)=> setQuantidade(e.target.value)}></input>
 
-                    <label htmlFor='userid'>ID</label>
-                    <input className='campo' type='number' id='user' name='user' placeholder='Digite id do usuário' onChange={(e)=> setUser(e.target.value)}></input>
+                    {/* <label htmlFor='user'>ID</label>
+                    <input className='campo' type='number' id='user' name='user' placeholder='Digite id do usuário' onChange={(e)=> setUser(e.target.value)}></input> */}
 
                     <input className='botao' type='button' value="Cadastrar Produto" onClick={cadastroProduct}/>
                 </form>

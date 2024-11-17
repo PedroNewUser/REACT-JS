@@ -19,15 +19,11 @@ root.render(
         <Route path='/' element={<App/>}></Route>
         <Route path='/save' element={<CadastroUser/>}></Route>
         <Route path='/listar-user' element={<ListarUsuario/>}></Route>
-<<<<<<< HEAD
         <Route path='/atualizar' element={<Atualizar/>}></Route>
         <Route path='/cadastro-product' element={<FormProduct/>}></Route>
         <Route path='/listar-product' element={<ListarProduto/>}></Route>
         <Route path='/atualizar-product' element={<AtualizarProduto/>}></Route>
-=======
         <Route path='/atualizar/:id' element={<Atualizar/>}></Route>
->>>>>>> 220aeed24dd6f81bbd59610bf791ec3f4914cc03
-
       </Routes>
     </BrowserRouter>
     

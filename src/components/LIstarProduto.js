@@ -14,7 +14,7 @@ function ListarProduto(){
 
         if (api.ok) {
             setProducts(resposta)
-            window.location.href = "http://localhost:3000/atualizar-product"
+            //window.location.href = "http://localhost:3000/atualizar-product"
         } else {
             alert("Erro")
             return false
