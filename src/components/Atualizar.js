@@ -1,7 +1,9 @@
 import { useState } from 'react'
-import './Atualizar.css'
+import './FormUser.css'
+import { useParams } from 'react-router-dom';
 
-function AtualizarUser() {
+function Atualizar() {
+    const {id} = useParams();
     const [name, setNome] = useState('')
     const [email, setEmail] = useState('')
     const [senha, setPassword] = useState('')
@@ -15,8 +17,8 @@ function AtualizarUser() {
         } 
 
         // Integrar com a vossa API
-        let api = await fetch("http://localhost:8081/atualizar?id", {
-            method : "POST",
+        let api = await fetch("http://localhost:8081/user/"+id, {
+            method : "PUT",
             body:JSON.stringify({
                 "name":name,
                 "email":email,
@@ -48,7 +50,7 @@ function AtualizarUser() {
         <div className='page'>
             <div className='card'>
                 <form className='form'>
-                    <h2>Atualizar</h2>
+                    <h2>Atualizar usuário</h2>
 
                     <label htmlFor='name'>Nome:</label>
                     <input className='campo' type='text' id='name' name='name' placeholder='Digite seu nome' onChange={(e)=> setNome(e.target.value)}></input>
@@ -62,12 +64,12 @@ function AtualizarUser() {
                     <label htmlFor='cpf_cnpf'>CPF/CNPJ:</label>
                     <input className='campo' type='text' id='cpf_cnpf' name='cpf_cnpf' placeholder='Digite seu CPF/CNPJ' onChange={(e)=> setCpf_cnpj(e.target.value)}></input>
 
-                    <input className='botao' type='button' value="Atualizar" onClick={AtualizarUser}/>
+                    <input className='botao' type='button' value="Cadastrar" onClick={AtualizarUser}/>
                 </form>
             </div>
         </div>
     )
 }
 
-export default AtualizarUser
+export default Atualizar
 
