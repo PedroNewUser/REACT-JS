@@ -1,20 +1,20 @@
-import './ListarUsuario.css'
+import './ListarProduto.css'
 import { useEffect, useState } from 'react'
 
 function onclick(id){            
     window.location.href = "http://localhost:3000/atualizar?id="+id}
 
-function ListarUsuario(){     
-    const [users, setUsers] = useState([]);
+function ListarProduto(){     
+    const [products, setProducts] = useState([]);
 
 
-    async function listUser() {
-        const api = await fetch("http://localhost:8081/user/list")
+    async function listProduct() {
+        const api = await fetch("http://localhost:8081/produto/list")
         const resposta = await api.json()
 
         if (api.ok) {
-            setUsers(resposta)
-            // window.location.href = "http://localhost:3000/atualizar"
+            setProducts(resposta)
+            window.location.href = "http://localhost:3000/atualizar-product"
         } else {
             alert("Erro")
             return false
@@ -22,17 +22,13 @@ function ListarUsuario(){
 
     }
 
-    function update(id){
-        window.location.href = "/atualizar/"+id
-    }
-
     useEffect(() => {
-        listUser()
+        listProduct()
     }, []);
 
-   
+
     return(
-        <div>
+        <div className='page-produto'>
 
     <label htmlFor='name'>Nome:</label>
                     <input className='campo' type='text' id='name' name='name' placeholder='Digite seu nome'></input>
@@ -41,16 +37,17 @@ function ListarUsuario(){
                 <tr>
                     <th>ID</th>
                     <th>Nome</th>
-                    <th>CPF</th>
-                    <th>Atualizar</th>
+                    <th>Preço</th>
+                    <th>Quantidade</th>
                 </tr>
                 <tbody>
-                    {users.map((user) => (
+                    {products.map((product) => (
                         <tr>
-                            <th>{user.id}</th>
-                            <th>{user.name}</th>
-                            <th>{user.cpf_cnpj}</th>
-                            <input className='table-button' type='button' value="Atualizar" onClick={() => update(user.id)} />
+                            <th>{product.id}</th>
+                            <th>{product.name}</th>
+                            <th>{product.preco}</th>
+                            <th>{product.quantidade}</th>
+                            <input className='table-button' type='button' value="Atualizar" onClick={() => onclick(product.id)} />
                         </tr>
                     ))}
                 </tbody>
@@ -59,7 +56,7 @@ function ListarUsuario(){
     )
 }
 
-export default ListarUsuario;
+export default ListarProduto;
 
 
     // const [name, setNome] = useState('')

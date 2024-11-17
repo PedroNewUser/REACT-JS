@@ -8,7 +8,7 @@ function FormUser() {
     const [cpf_cnpj, setCpf_cnpj] = useState('')
 
 
-    async function CadastroUser() {
+    async function cadastroUser() {
         if(name === "" || email === "" || senha === "" || cpf_cnpj==="") {
             alert("Preencha todos os campos!")
             return
@@ -62,7 +62,7 @@ function FormUser() {
                     <label htmlFor='cpf_cnpf'>CPF/CNPJ:</label>
                     <input className='campo' type='text' id='cpf_cnpf' name='cpf_cnpf' placeholder='Digite seu CPF/CNPJ' onChange={(e)=> setCpf_cnpj(e.target.value)}></input>
 
-                    <input className='botao' type='button' value="Cadastrar" onClick={CadastroUser}/>
+                    <input className='botao' type='button' value="Cadastrar" onClick={cadastroUser}/>
                 </form>
             </div>
         </div>
