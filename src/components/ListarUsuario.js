@@ -22,11 +22,15 @@ function ListarUsuario(){
 
     }
 
+    function update(id){
+        window.location.href = "/atualizar/"+id
+    }
+
     useEffect(() => {
         listUser()
     }, []);
 
-
+   
     return(
         <div>
 
@@ -46,7 +50,7 @@ function ListarUsuario(){
                             <th>{user.id}</th>
                             <th>{user.name}</th>
                             <th>{user.cpf_cnpj}</th>
-                            <input className='table-button' type='button' value="Atualizar" onClick={() => onclick(user.id)} />
+                            <input className='table-button' type='button' value="Atualizar" onClick={() => update(user.id)} />
                         </tr>
                     ))}
                 </tbody>

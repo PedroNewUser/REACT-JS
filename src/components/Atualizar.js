@@ -1,4 +1,5 @@
 import { useState } from 'react'
+<<<<<<< HEAD
 import './FormUser.css'
 import { useParams } from 'react-router-dom';
 
@@ -8,6 +9,23 @@ function Atualizar() {
     const [email, setEmail] = useState('')
     const [senha, setPassword] = useState('')
     const [cpf_cnpj, setCpf_cnpj] = useState('')
+=======
+import { useParams } from 'react-router-dom';
+import './FormUser.css'
+import { useParams } from 'react-router-dom'
+
+// function Onclick(){          
+//         window.location.href = "http://localhost:3000/atualizar?id="+id
+//     }
+
+
+function FormUser() {
+    const {id} = useParams();
+    const [name, setNome] = useState('');
+    const [email, setEmail] = useState('');
+    const [senha, setPassword] = useState('');
+    const [cpf_cnpj, setCpf_cnpj] = useState('');
+>>>>>>> 220aeed24dd6f81bbd59610bf791ec3f4914cc03
 
 
     async function AtualizarUser() {
@@ -50,7 +68,11 @@ function Atualizar() {
         <div className='page'>
             <div className='card'>
                 <form className='form'>
+<<<<<<< HEAD
                     <h2>Atualizar usuário</h2>
+=======
+                    <h2>Cadastra-se</h2>
+>>>>>>> 220aeed24dd6f81bbd59610bf791ec3f4914cc03
 
                     <label htmlFor='name'>Nome:</label>
                     <input className='campo' type='text' id='name' name='name' placeholder='Digite seu nome' onChange={(e)=> setNome(e.target.value)}></input>
