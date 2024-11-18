@@ -5,11 +5,11 @@ function onclick(id){
     window.location.href = "http://localhost:3000/atualizar-product?id="+id}
 
 function ListarVendas(){     
-    const [products, setProducts] = useState([]);
+    const [vendas, setVendas] = useState([]);
 
 
     async function listvendas() {
-        const api = await fetch("http://localhost:8081/produto/list")
+        const api = await fetch("http://localhost:8081/list/vendas")
         const resposta = await api.json()
 
         if (api.ok) {
@@ -44,12 +44,12 @@ function ListarVendas(){
                     <th>Quantidade</th>
                 </tr>
                 <tbody>
-                    {products.map((product) => (
+                    {vendas.map((venda) => (
                         <tr>
-                            <th>{product.id}</th>
-                            <th>{product.name}</th>
-                            <th>{product.preco}</th>
-                            <th>{product.quantidade}</th>
+                            <th>{venda.id}</th>
+                            <th>{venda.name}</th>
+                            <th>{venda.preco}</th>
+                            <th>{venda.quantidade}</th>
                             <input className='table-button' type='button' value="Atualizar" onClick={() => onclick(product.id)} />
                             <input className='table-button-comprar' type='button' value="Comprar"/>
                         </tr>
