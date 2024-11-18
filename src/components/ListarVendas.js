@@ -9,11 +9,11 @@ function ListarVendas(){
 
 
     async function listvendas() {
-        const api = await fetch("http://localhost:8081/list/vendas")
+        const api = await fetch("http://localhost:8081/produto/list/vendas")
         const resposta = await api.json()
 
         if (api.ok) {
-            setProducts(resposta)
+            setVendas(resposta)
             //window.location.href = "http://localhost:3000/atualizar-product"
         } else {
             alert("Erro")
@@ -50,7 +50,7 @@ function ListarVendas(){
                             <th>{venda.name}</th>
                             <th>{venda.preco}</th>
                             <th>{venda.quantidade}</th>
-                            <input className='table-button' type='button' value="Atualizar" onClick={() => onclick(product.id)} />
+                            <input className='table-button' type='button' value="Atualizar" onClick={() => onclick(venda.id)} />
                             <input className='table-button-comprar' type='button' value="Comprar"/>
                         </tr>
                     ))}
