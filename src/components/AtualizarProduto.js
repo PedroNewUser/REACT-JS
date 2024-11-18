@@ -1,3 +1,6 @@
+
+import { useParams } from 'react-router-dom';
+import './FormUser.css'
 import { useState } from 'react'
 
 
@@ -63,4 +66,3 @@ function AtualizarProduto() {
 }
 
 export default AtualizarProduto
-

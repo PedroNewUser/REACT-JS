@@ -1,6 +1,3 @@
-import { useState } from 'react'
-<<<<<<< HEAD
-import './FormUser.css'
 import { useParams } from 'react-router-dom';
 import './FormUser.css'
 import { useState } from 'react'
@@ -75,4 +72,3 @@ function Atualizar() {
 }
 
 export default Atualizar
-
