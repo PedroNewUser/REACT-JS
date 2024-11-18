@@ -10,6 +10,7 @@ import Atualizar from './components/Atualizar'
 import FormProduct from './components/CadastroProduct';
 import ListarProduto from './components/LIstarProduto';
 import AtualizarProduto from './components/AtualizarProduto';
+import ListarVendas from './components/ListarVendas';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,14 +20,13 @@ root.render(
         <Route path='/' element={<App/>}></Route>
         <Route path='/save' element={<CadastroUser/>}></Route>
         <Route path='/listar-user' element={<ListarUsuario/>}></Route>
-<<<<<<< HEAD
+
         <Route path='/atualizar' element={<Atualizar/>}></Route>
         <Route path='/cadastro-product' element={<FormProduct/>}></Route>
         <Route path='/listar-product' element={<ListarProduto/>}></Route>
         <Route path='/atualizar-product' element={<AtualizarProduto/>}></Route>
-=======
         <Route path='/atualizar/:id' element={<Atualizar/>}></Route>
->>>>>>> 220aeed24dd6f81bbd59610bf791ec3f4914cc03
+        <Route path='/listar-vendas' element={<ListarVendas/>}></Route>
 
       </Routes>
     </BrowserRouter>

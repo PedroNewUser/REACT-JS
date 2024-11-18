@@ -1,8 +1,9 @@
 import './ListarUsuario.css'
 import { useEffect, useState } from 'react'
 
-function onclick(id){            
-    window.location.href = "http://localhost:3000/atualizar?id="+id}
+function onClickbotao(){
+    window.location.href = "http://localhost:3000/listar-product"
+}
 
 function ListarUsuario(){     
     const [users, setUsers] = useState([]);
@@ -33,6 +34,9 @@ function ListarUsuario(){
    
     return(
         <div>
+            <form>
+                <input className='botaoprodutos' type='button' value="Produtos" onClick={onClickbotao}/>
+            </form>
 
     <label htmlFor='name'>Nome:</label>
                     <input className='campo' type='text' id='name' name='name' placeholder='Digite seu nome'></input>
@@ -71,4 +75,3 @@ export default ListarUsuario;
     // ]
 
     // <input className="table-button" type="button" value="Atualizar" onClick={() => update(user.id)}></input>
-
