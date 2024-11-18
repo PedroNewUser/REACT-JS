@@ -76,3 +76,4 @@ export default ListarUsuario;
     // ]
 
     // <input className="table-button" type="button" value="Atualizar" onClick={() => update(user.id)}></input>
+
