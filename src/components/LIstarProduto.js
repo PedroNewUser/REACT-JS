@@ -2,7 +2,7 @@ import './ListarProduto.css'
 import { useEffect, useState } from 'react'
 
 function onclick(id){            
-    window.location.href = "http://localhost:3000/atualizar?id="+id}
+    window.location.href = "http://localhost:3000/atualizar-product?id="+id}
 
 function ListarProduto(){     
     const [products, setProducts] = useState([]);
