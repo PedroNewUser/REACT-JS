@@ -1,33 +1,14 @@
-import './ListarProduto.css'
+import './ListarVendas.css'
 import { useEffect, useState } from 'react'
-
 
 function onclick(id){            
     window.location.href = "http://localhost:3000/atualizar-product?id="+id}
 
-
-function onClickvendas() {
-    window.location.href = "http://localhost:3000/listar-vendas"
-}
-
-async function onClickCompras(id){
-    let api = await fetch("http://localhost:8081/produto/comprar/"+id, {
-        method : "POST",
-        body:JSON.stringify({
-            "id":id,
-        }),
-        headers:{
-            'Content-Type':'application/json'
-        }
-    })
-    alert("Compra realizada com sucesso!")
-}
-
-
-function ListarProduto(){     
+function ListarVendas(){     
     const [products, setProducts] = useState([]);
 
-    async function listProduct() {
+
+    async function listvendas() {
         const api = await fetch("http://localhost:8081/produto/list")
         const resposta = await api.json()
 
@@ -42,14 +23,14 @@ function ListarProduto(){
     }
 
     useEffect(() => {
-        listProduct()
+        listvendas()
     }, []);
 
 
     return(
         <div className='page-produto'>
             <form>
-            <input className='botaovendas' type='button' value="Listar Vendas" onClick={onClickvendas}/>
+            <input className='botaovendas' type='button' value="Listar Vendas"/>
             </form>
 
     <label htmlFor='name'>Nome:</label>
@@ -70,7 +51,7 @@ function ListarProduto(){
                             <th>{product.preco}</th>
                             <th>{product.quantidade}</th>
                             <input className='table-button' type='button' value="Atualizar" onClick={() => onclick(product.id)} />
-                            <input className='table-button-comprar' type='button' value="Comprar" onClick={() => onClickCompras(product.id)}/>
+                            <input className='table-button-comprar' type='button' value="Comprar"/>
                         </tr>
                     ))}
                 </tbody>
@@ -79,7 +60,7 @@ function ListarProduto(){
     )
 }
 
-export default ListarProduto;
+export default ListarVendas;
 
 
     // const [name, setNome] = useState('')

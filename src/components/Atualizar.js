@@ -50,7 +50,6 @@ function Atualizar() {
             <div className='card'>
                 <form className='form'>
                     <h2>Atualizar usuário</h2>
-                    <h2>Cadastra-se</h2>
 
                     <label htmlFor='name'>Nome:</label>
                     <input className='campo' type='text' id='name' name='name' placeholder='Digite seu nome' onChange={(e)=> setNome(e.target.value)}></input>
@@ -65,6 +64,7 @@ function Atualizar() {
                     <input className='campo' type='text' id='cpf_cnpf' name='cpf_cnpf' placeholder='Digite seu CPF/CNPJ' onChange={(e)=> setCpf_cnpj(e.target.value)}></input>
 
                     <input className='botao' type='button' value="Cadastrar" onClick={AtualizarUser}/>
+                    <input className='botao-produto' type='button' value="Produtos"/>
                 </form>
             </div>
         </div>
@@ -72,4 +72,3 @@ function Atualizar() {
 }
 
 export default Atualizar
-

@@ -19,7 +19,7 @@ function FormProduct() {
             body:JSON.stringify({
                 "name":name,
                 "preco":preco,
-                "quantidade":quantidade
+                "quantidade":quantidade,
                 // "user":user
             }),
             headers:{
@@ -66,4 +66,3 @@ function FormProduct() {
 }
 
 export default FormProduct
-
