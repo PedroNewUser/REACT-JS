@@ -1,3 +1,17 @@
+.botaoproduto {
+    position: fixed; /* Fixa o elemento na tela */
+    bottom: 10px; /* Distância da parte inferior */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajusta o ponto de referência do centro */
+    padding: 10px;
+    color: #FFF;
+    background-color: rgb(7, 169, 175);
+    border-radius: 15px;
+    border: 2px solid #000;
+    cursor: pointer;
+    transition: all linear 190ms;
+}
+
 .campo {
     color: #000;
     padding: 15px;
@@ -22,15 +36,20 @@ tr, th{
     
 }
 
-.table-button {
-    padding: 10px;
+.botaoprodutos {
+    position: fixed; /* Fixa o botão na tela */
+    bottom: 10px; /* Define a distância da borda inferior */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Corrige o ponto de referência */
+    padding: 10px 20px;
     color: #FFF;
     background-color: rgb(7, 169, 175);
     border-radius: 15px;
     border: 2px solid #000;
     cursor: pointer;
     transition: all linear 190ms;
-
 }
+
+
 
 /* kkkqdadwadalkdlal */

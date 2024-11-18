@@ -1,8 +1,17 @@
 
-.page-produto {
-    background-color: blue;
+.botaoproduto {
+    position: fixed; /* Fixa o elemento na tela */
+    bottom: 10px; /* Distância da parte inferior */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajusta o ponto de referência do centro */
+    padding: 10px;
+    color: #FFF;
+    background-color: rgb(7, 169, 175);
+    border-radius: 15px;
+    border: 2px solid #000;
+    cursor: pointer;
+    transition: all linear 190ms;
 }
-
 
 .campo {
     color: #000;
@@ -22,35 +31,13 @@ table{
 }
 
 tr, th{
-    border: 3px solid #000;
+    border: 2px solid #ecc900;
     color: #FFF;
     padding: 1em;
     
 }
 
-.table-button {
-    padding: 10px;
-    color: #FFF;
-    background-color: rgb(7, 169, 175);
-    border-radius: 15px;
-    border: 2px solid #000;
-    cursor: pointer;
-    transition: all linear 190ms;
-
-}
-
-.table-button-comprar {
-    padding: 10px;
-    color: #FFF;
-    background-color: rgb(7, 169, 175);
-    border-radius: 15px;
-    border: 2px solid #000;
-    cursor: pointer;
-    transition: all linear 190ms;
-
-}
-
-.botaovendas {
+.botaoprodutos {
     position: fixed; /* Fixa o botão na tela */
     bottom: 10px; /* Define a distância da borda inferior */
     left: 50%; /* Centraliza horizontalmente */
@@ -63,3 +50,7 @@ tr, th{
     cursor: pointer;
     transition: all linear 190ms;
 }
+
+
+
+/* kkkqdadwadalkdlal */

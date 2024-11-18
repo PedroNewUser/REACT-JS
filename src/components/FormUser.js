@@ -70,4 +70,3 @@ function FormUser() {
 }
 
 export default FormUser
-

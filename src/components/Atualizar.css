@@ -1,3 +1,4 @@
+
 .page {
     display: flex;
     justify-content: center;
@@ -47,4 +48,9 @@
 
 label {
     font-weight: 600;
+}
+
+.botao-produto {
+    background-color: aliceblue;
+    
 }
