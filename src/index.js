@@ -22,10 +22,9 @@ root.render(
         <Route path='/save' element={<CadastroUser/>}></Route>
         <Route path='/listar-user' element={<ListarUsuario/>}></Route>
 
-        <Route path='/atualizar' element={<Atualizar/>}></Route>
         <Route path='/cadastro-product' element={<FormProduct/>}></Route>
         <Route path='/listar-product' element={<ListarProduto/>}></Route>
-        <Route path='/atualizar-product' element={<AtualizarProduto/>}></Route>
+        <Route path='/atualizar-product/:id' element={<AtualizarProduto/>}></Route>
         <Route path='/atualizar/:id' element={<Atualizar/>}></Route>
         <Route path='/listar-vendas' element={<ListarVendas/>}></Route>
 

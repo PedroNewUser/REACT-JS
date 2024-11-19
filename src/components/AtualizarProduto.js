@@ -1,4 +1,5 @@
-
+import React from 'react'
+import ReactDOM from 'react-dom'
 import { useParams } from 'react-router-dom';
 import './FormUser.css'
 import { useState } from 'react'
@@ -11,7 +12,7 @@ function AtualizarProduto() {
     const [preco, setPreco] = useState('')
 
     async function atualizarProduct() {
-        if(name === "" || quantidade === "" || preco === "" ) {
+        if(name === "" || quantidade === "" || preco === "") {
             alert("Preencha todos os campos!")
             return
         } 
@@ -22,8 +23,7 @@ function AtualizarProduto() {
             body:JSON.stringify({
                 "name":name,
                 "preco":preco,
-                "quantidade":quantidade
-                
+                "quantidade":quantidade 
             }),
             headers:{
                 'Content-Type':'application/json'
@@ -32,7 +32,7 @@ function AtualizarProduto() {
 
         if(api.ok){
             alert("Cadastro com sucesso !")
-            window.location.href = "http://localhost:3000//listar-product"
+            window.location.href = "http://localhost:3000/listar-product"
             return;
         }
         else {

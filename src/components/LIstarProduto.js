@@ -1,10 +1,11 @@
-
+import React from 'react'
+import ReactDOM from 'react-dom'
 import './ListarProduto.css'
 import { useEffect, useState } from 'react'
 
 
 function onclick(id){            
-    window.location.href = "http://localhost:3000/atualizar-product?id="+id}
+    window.location.href = "http://localhost:3000/atualizar-product/"+id}
 
 
 function onClickvendas() {
@@ -21,7 +22,12 @@ async function onClickCompras(id){
             'Content-Type':'application/json'
         }
     })
-    alert("Compra realizada com sucesso!")
+    if(api.ok){
+        alert("Compra realizada com sucesso!")
+    }
+    else {
+        alert("Compra Deu merda!");
+    }
 }
 
 

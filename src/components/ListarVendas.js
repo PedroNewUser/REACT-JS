@@ -1,9 +1,10 @@
-
+import React from 'react'
+import ReactDOM from 'react-dom'
 import './ListarVendas.css'
 import { useEffect, useState } from 'react'
 
 function onclick(id){            
-    window.location.href = "http://localhost:3000/atualizar-product?id="+id}
+    window.location.href = "http://localhost:3000/atualizar-product"+id}
 
 function ListarVendas(){     
     const [vendas, setVendas] = useState([]);
@@ -62,14 +63,3 @@ function ListarVendas(){
 }
 
 export default ListarVendas;
-
-
-    // const [name, setNome] = useState('')
-    // const user = [
-    //     {id:1, name:"Carlos", cpf:"23456"},
-    //     {id:2, name:"Josue", cpf:"464164"},
-    //     {id:3, name:"Astolfo", cpf:"8416516"},
-    //     {id:4, name:"Thomas", cpf:"716541684"}
-    // ]
-
-    // <input className="table-button" type="button" value="Atualizar" onClick={() => update(user.id)}></input>
