@@ -29,10 +29,30 @@ async function onClickCompras(id,quantidade){
     }
 }
 
+async function onClickInativar(id){
+    let api = await fetch("http://localhost:8081/produto/inativar", {
+        method : "POST",
+        body:JSON.stringify({
+            "id":id,
+            "inativo": 0
+        }),
+        headers:{
+            'Content-Type':'application/json'
+        }
+    })
+    if(api.ok){
+        alert("Compra inativada com sucesso!")
+    }
+    else {
+        alert("Compra inativa Deu merda!");
+    }
+}
+
 
 function ListarProduto(){  
     const [quantidade, setQuantidade] = useState('')   
     const [products, setProducts] = useState([]);
+    const [inativo, setInativo] = useState(0);
 
     async function listProduct() {
         const api = await fetch("http://localhost:8081/produto/list")
@@ -78,6 +98,7 @@ function ListarProduto(){
                             <th>{product.quantidade}</th>
                             <input className='table-button' type='button' value="Atualizar" onClick={() => onclick(product.id)} />
                             <input className='table-button-comprar' type='button' value="Comprar" onClick={() => onClickCompras(product.id, quantidade)}/>
+                            <input className='table-button-comprar' type='button' value="Inativar" onClick={() => onClickInativar(product.id, inativo)} onChange={(e)=> setInativo(e.target.value)}/>
                             <input className='campo' type='number' id='quantidade' name='quantidade' placeholder='Digite a quantidade do produto'  onChange={(e)=> setQuantidade(e.target.value)}></input>
                         </tr>
                     ))}

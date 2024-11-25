@@ -3,9 +3,6 @@ import ReactDOM from 'react-dom'
 import './ListarVendas.css'
 import { useEffect, useState } from 'react'
 
-function onclick(id){            
-    window.location.href = "http://localhost:3000/atualizar-product"+id}
-
 function ListarVendas(){     
     const [vendas, setVendas] = useState([]);
 
@@ -52,8 +49,6 @@ function ListarVendas(){
                             <th>{venda.name}</th>
                             <th>{venda.preco}</th>
                             <th>{venda.quantidade}</th>
-                            <input className='table-button' type='button' value="Atualizar" onClick={() => onclick(venda.id)} />
-                            <input className='table-button-comprar' type='button' value="Comprar"/>
                         </tr>
                     ))}
                 </tbody>
