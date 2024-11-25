@@ -1,8 +1,6 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import './ListarProduto.css'
 import { useEffect, useState } from 'react'
-
 
 function onclick(id){            
     window.location.href = "http://localhost:3000/atualizar-product/"+id}
@@ -12,11 +10,12 @@ function onClickvendas() {
     window.location.href = "http://localhost:3000/listar-vendas"
 }
 
-async function onClickCompras(id){
-    let api = await fetch("http://localhost:8081/produto/comprar/"+id, {
+async function onClickCompras(id,quantidade){
+    let api = await fetch("http://localhost:8081/produto/comprar", {
         method : "POST",
         body:JSON.stringify({
             "id":id,
+            "quantidade":quantidade
         }),
         headers:{
             'Content-Type':'application/json'
@@ -31,7 +30,8 @@ async function onClickCompras(id){
 }
 
 
-function ListarProduto(){     
+function ListarProduto(){  
+    const [quantidade, setQuantidade] = useState('')   
     const [products, setProducts] = useState([]);
 
     async function listProduct() {
@@ -77,7 +77,8 @@ function ListarProduto(){
                             <th>{product.preco}</th>
                             <th>{product.quantidade}</th>
                             <input className='table-button' type='button' value="Atualizar" onClick={() => onclick(product.id)} />
-                            <input className='table-button-comprar' type='button' value="Comprar" onClick={() => onClickCompras(product.id)}/>
+                            <input className='table-button-comprar' type='button' value="Comprar" onClick={() => onClickCompras(product.id, quantidade)}/>
+                            <input className='campo' type='number' id='quantidade' name='quantidade' placeholder='Digite a quantidade do produto'  onChange={(e)=> setQuantidade(e.target.value)}></input>
                         </tr>
                     ))}
                 </tbody>
